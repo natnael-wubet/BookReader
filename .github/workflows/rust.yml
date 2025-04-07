@@ -16,7 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    
+    - name: Set up Rust
+      run: rustup update
     - name: Build
       run: cargo build --verbose
+      working-directory: ./src-tauri
     - name: Run tests
       run: cargo test --verbose
+      working-directory: ./src-tauri
